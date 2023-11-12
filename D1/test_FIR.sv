@@ -11,23 +11,9 @@ logic output_ready;
 const int input_frequency = 5000;
 
 // Instantiate the FIR module
-fir CUT (
-	.in(in),
-    .input_ready(input_ready),
-    .ck(ck),
-    .rst(rst),
-    .out(out),
-    .output_ready(output_ready)
-);
+fir CUT (.*);
 
-// Clock generator, generates a 1 MHz clock
-initial 
-begin
-	ck = 0;
-    forever #500ns ck = ~ck;
-end
-
-  
+// Clock generator, generates a 1 MHz clock  
 initial
 begin
 	ck = '0;

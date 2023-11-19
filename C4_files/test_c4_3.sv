@@ -26,8 +26,8 @@ module test_c4;
 timeunit 1ns;
 timeprecision 100ps;
 
-logic s, t;
-logic n_clk, rst, a;
+logic s, t, n, SDO;//add n, SDO
+logic n_clk, rst, a, c, mode, SDI;//add c, mode, SDI
 
 c4 c4 (.*);
 
@@ -40,76 +40,32 @@ initial
   
 initial
 
-/*
   begin
-  rst = 1;
+  mode=0;
+  SDI=1;
   a = 0;
-  #10 rst = 0;
-  #10 rst = 1;
-  #40 a = 1;
-  #60 a = 0;
-  #20 a = 1;
-  #20 a = 0;
-  #40 a = 1;
-  #20 a = 0;
-  #20 a = 1;
-  #20 $finish;
-  end
-*/
-
-/*
-begin
-        rst = 1;
-		a = 0;		
-        #20 rst = 0;
-		#20 rst = 1;  //reset to AA
-
-        
-        #20 a = 1;	// AA to AB
-        #20 a = 0;  // AB to AC
-
-        #20 a = 0;	// AC back to AA
-        #20 a = 1;  // AA to AB
-
-       
-        #20 a = 0; 	// AB to AC
-
-        
-        #20 a = 1;	// AC back to AA
-        
-        #20 a = 1;	// AA to AB
-
-        #20 a = 1;  // AB to AD
-        #20 a = 1;  // AD back to AD
-		#20 a = 0;	// AD to AA
-
-        #20 $finish;
-    end
-*/
-	
-initial
-
-  begin
-  c=1;
+  c=0;//add c
   rst = 1;
-  a = 0;
-  m=1;
+
   #20 rst = 0;
   #20 rst = 1;
-  #20 SDI = 0;
-  #20 SDI = 0;
-  #20 SDI = 1;
-  #20 SDI = 1;
-  #20 SDI = 0;
-  #20 a = 1;
-  #20 a = 1;
-  #20 a = 1;
-  #20 a = 1;
-  #20 a = 0;
+  #20 a = 0;c=1;SDI=1; //00->00
+  #20 a = 1;c=1;SDI=1; //00->01
+  #20 a = 0;c=1;SDI=1; //01->11
+  #20 a = 0;c=1;SDI=1; //11->00
+  #20 a = 1;c=1;SDI=1; //00->01
+  #20 a = 0;c=1;SDI=1; //01->11
+  #20 a = 1;c=1;SDI=1; //11->00
+  #20 a = 1;c=1;SDI=1; //00->01
+  #20 a = 1;c=1;SDI=1; //01->10
+  #20 a = 1;c=1;SDI=1; //10->10
+  #20 a = 0;c=1;SDI=1; //10->00
+  
   
   
   
   #20 $finish;
   end
-	
+
 endmodule
+  

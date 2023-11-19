@@ -17,32 +17,27 @@ module test_sequencer;
 
     // 测试序列
     initial begin
-        // 初始化
         clk = 0;
         n_rst = 0; a = 0;
-        #10 n_rst = 1;  // 释放复位
+        #10 n_rst = 1;  //reset to AA
 
-        // AA 到 AB
-        #10 a = 1;
-        #10 a = 0;  // 复位输入 A
+        
+        #10 a = 1;	// AA to AB
+        #10 a = 0;  // test back to AA
 
-        // AB 到 AD
-        #10 a = 1;
-        #10 a = 0;  // 复位输入 A
+        #10 a = 1;	// AA to AB again
+        #10 a = 0;  // AB to AC
 
-        // AD 到 AA
-        #10 a = 0;
+        // AC back to AA
+        #10 a = 0; 	// a not important here
 
-        // AA 到 AB (再次)
-        #10 a = 1;
-        #10 a = 0;  // 复位输入 A
+        
+        #10 a = 1;	// AA to AB 3rd
+        
+        #10 a = 1;// AC to AD
 
-        // AB 到 AC
-        #10 a = 0;
-
-        // AC 到 AA
-        #10 a = 1;  // a 的值在这里不重要
-        #10 a = 0;  // 结束测试
+        #10 a = 1;  // back to AD
+        #10 a = 0;  // back to AA finish test
 
         #10 $finish;
     end

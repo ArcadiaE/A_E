@@ -40,6 +40,7 @@ initial
   
 initial
 
+/*
   begin
   rst = 1;
   a = 0;
@@ -54,6 +55,34 @@ initial
   #20 a = 1;
   #20 $finish;
   end
+*/
 
+begin
+        a = 0;
+        rst = 1; 
+        #10 rst = 0
+		#10 rst = 1;  //reset to AA
+
+        
+        #10 a = 1;	// AA to AB
+        #10 a = 0;  // test back to AA
+
+        #10 a = 1;	// AA to AB again
+        #10 a = 0;  // AB to AC
+
+        // AC back to AA
+        #10 a = 0; 	// a not important here
+
+        
+        #10 a = 1;	// AA to AB 3rd
+        
+        #10 a = 1;// AC to AD
+
+        #10 a = 1;  // back to AD
+        #10 a = 0;  // back to AA finish test
+
+        #10 $finish;
+    end
+	
 endmodule
   

@@ -58,31 +58,33 @@ initial
 */
 
 begin
-        a = 0;
-        rst = 1; 
-        #10 rst = 0
-		#10 rst = 1;  //reset to AA
+        rst = 1;
+		a = 0;		
+        #20 rst = 0;
+		#20 rst = 1;  //reset to AA
 
         
-        #10 a = 1;	// AA to AB
-        #10 a = 0;  // test back to AA
+        #20 a = 1;	// AA to AB
+        #20 a = 0;  // AB to AC
 
-        #10 a = 1;	// AA to AB again
-        #10 a = 0;  // AB to AC
+        #20 a = 0;	// AC back to AA
+        #20 a = 1;  // AA to AB
 
-        // AC back to AA
-        #10 a = 0; 	// a not important here
+       
+        #20 a = 0; 	// AB to AC
 
         
-        #10 a = 1;	// AA to AB 3rd
+        #20 a = 1;	// AC back to AA
         
-        #10 a = 1;// AC to AD
+        #20 a = 1;	// AA to AB
 
-        #10 a = 1;  // back to AD
-        #10 a = 0;  // back to AA finish test
+        #20 a = 1;  // AB to AD
+        #20 a = 1;  // AD back to AD
+		#20 a = 0;	// AD to AA
 
-        #10 $finish;
+        #20 $finish;
     end
 	
 endmodule
   
+

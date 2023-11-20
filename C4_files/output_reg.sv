@@ -20,10 +20,14 @@
 //
 /////////////////////////////////////////////////////////////////////
 
-module output_reg (output logic n, input logic clk, s, t, c);
+module output_reg (output logic n, input logic clk, s, t, c, rst, scan_in, mode);
 
 always_ff @(posedge clk)
-  if (s)
-    n <= t & c;
+	if (~rst)
+		n <= 0;
+	else if (mode)
+		n <= scan_in;
+	else if (s)
+		n <= t & c;
     
 endmodule

@@ -27,7 +27,7 @@ timeunit 1ns;
 timeprecision 100ps;
 
 logic s, t, n, SDO;//add n, SDO
-logic n_clk, rst, a, c, mode, SDI;//add c, mode, SDI
+logic n_clk, rst, a, c, m, SDI;//add c, mode, SDI
 
 c4 c4 (.*);
 
@@ -41,25 +41,25 @@ initial
 initial
 
   begin
-  mode=0;
-  SDI=1;
+  m=0;
+  SDI=0;
   a = 0;
   c=0;//add c
   rst = 1;
 
   #20 rst = 0;
-  #20 rst = 1;
-  #20 a = 0;c=1;SDI=1; //00->00
-  #20 a = 1;c=1;SDI=1; //00->01
-  #20 a = 0;c=1;SDI=1; //01->11
-  #20 a = 0;c=1;SDI=1; //11->00
-  #20 a = 1;c=1;SDI=1; //00->01
-  #20 a = 0;c=1;SDI=1; //01->11
-  #20 a = 1;c=1;SDI=1; //11->00
-  #20 a = 1;c=1;SDI=1; //00->01
-  #20 a = 1;c=1;SDI=1; //01->10
-  #20 a = 1;c=1;SDI=1; //10->10
-  #20 a = 0;c=1;SDI=1; //10->00
+  #20 rst = 1; m=1;
+  #20 SDI = 0; //00->00
+  #20 SDI = 1; //00->01
+  #20 SDI = 0; //01->11
+  #20 SDI = 0; //11->00
+  #20 SDI = 1; //00->01
+  #20 SDI = 0; //01->11
+  #20 SDI = 1; //11->00
+  #20 SDI = 1; //00->01
+  #20 SDI = 1; //01->10
+  #20 SDI = 1; //10->10
+  #20 SDI = 0; //10->00
   
   
   

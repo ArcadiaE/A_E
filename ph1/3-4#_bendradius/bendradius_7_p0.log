@@ -1,0 +1,23 @@
+Ansys Lumerical 2023 R2.1 Finite Difference Eigenmode Solver Version 7.22.3494 (Windows 64bit)
+ expires (month/day/year): 8/2/2025
+using config file: Ansys Licensing set with ANSYSLMD_LICENSE_FILE
+license host: 10550@AnsysLM4.soton.ac.uk
+current time: Thu Feb 1 14:41:39 2024
+Running on host: JFB60-R1023-A02
+Running lms file: C:\Program Files\Lumerical\v232\bin\fd-engine-msmpi.exe -t 16 -remote -hide -shared-solve-license QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT08QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT48SUQ+MDNmODljYjgtYzdiZC00MTc3LTlmZDAtNTk4ZjA2MmM2YzYyPC9JRD48VFlQRT5BUFBfREVGSU5FRDwvVFlQRT48TkFNRT5sdW1fc3RhbmRhcmRfc29sdmVfc2hhcmU8L05BTUU+PEhBTkRMRVI+NjM4MTJASkZCNjAtUjEwMjMtQTAyLnNvdG9uLmFjLnVrPC9IQU5ETEVSPjwvQU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT4K //filestore.soton.ac.uk/users/yz50u22/mydocuments/ac2023-2024/ph1/3-4#_bendradius/bendradius_7.lms
+Running MODE Simulation
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 124
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.015625 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 124
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 124
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0 seconds of CPU time

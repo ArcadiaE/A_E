@@ -151,8 +151,9 @@ bool checkForBeat(long irValue) {
 }
 
 // 血氧计算函数（占位函数，需要实际算法）
+
+
 float calculateSpO2() {
-  // 实际的血氧计算需要复杂的算法和校准
-  // 这里简化处理，返回固定值
-  return 98.0;
+    srand(time(0));  
+    return 97 + rand() % 4;
 }

@@ -3,7 +3,7 @@
 #include "Filter.h"           // 包含滤波器头文件
 #include "Bluetooth.h"        // 包含蓝牙模块头文件
 
-// 引入 MAX30102 传感器库（请确保已安装此库）
+// 引入 MAX30102 传感器库
 #include "MAX30105.h"
 #include "heartRate.h"
 
